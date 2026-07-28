@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Marcus-Jr/vega-assistant-web?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Marcus-Jr/vega-assistant-web?style=for-the-badge)
 
-<img src="imagem.png" alt="vega assistant image">
+<img src="image.png" alt="vega assistant image">
 
 Vega é um assistente virtual web construído com Flask e JavaScript puro, com reconhecimento e síntese de voz em português, respostas de IA via OpenRouter (modelo Nemotron 3 Ultra), consulta de clima e horário em tempo real, e uma esfera 3D animada (Three.js) que reage ao estado da conversa.
 
