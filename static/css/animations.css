@@ -1,0 +1,37 @@
+.voice-button.listening{
+
+    animation: mic-bounce .6s ease-in-out infinite;
+
+}
+
+.voice-button.listening::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-6px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(43,238,52,.6);
+
+    animation: mic-ring 1.2s ease-out infinite;
+
+}
+
+@keyframes mic-bounce{
+
+    0%,100%{ transform:scale(1); }
+
+    50%{ transform:scale(1.12); }
+
+}
+
+@keyframes mic-ring{
+
+    0%{ opacity:.8; transform:scale(1); }
+
+    100%{ opacity:0; transform:scale(1.7); }
+
+}

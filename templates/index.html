@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Vega Assistant</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/animations.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="hero">
+
+        <button
+            id="infoButton"
+            class="info-button"
+            aria-label="Sobre o Vega"
+        >
+
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+
+                <path d="M12 11v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+
+                <circle cx="12" cy="7.5" r="1" fill="currentColor"/>
+
+            </svg>
+
+        </button>
+
+        <div
+            id="sphere"
+            class="sphere-container"
+        ></div>
+
+        <h1>Vega</h1>
+
+        <p class="subtitle">
+
+            Como posso ajudar hoje?
+
+        </p>
+
+    </header>
+
+    <main
+        id="chat"
+        class="chat"
+    >
+
+    </main>
+
+    <footer class="input-area">
+
+        <button
+            id="voiceButton"
+            class="icon-button voice-button"
+            aria-label="Gravar áudio"
+        >
+
+            <svg
+                class="mic-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <path
+                    d="M12 15c1.66 0 3-1.34 3-3V6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm-1.2-9c0-.66.54-1.2 1.2-1.2s1.2.54 1.2 1.2v6c0 .66-.54 1.2-1.2 1.2s-1.2-.54-1.2-1.2V6zm6.2 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"
+                />
+
+            </svg>
+
+        </button>
+
+        <input
+
+            id="message"
+
+            type="text"
+
+            placeholder="Digite sua mensagem..."
+
+            autocomplete="off"
+
+        >
+
+        <button
+
+            id="sendButton"
+
+            class="icon-button send"
+
+        >
+
+            <svg
+                class="send-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <path
+                    d="M4 12l16-7-6 7 6 7-16-7z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                />
+
+            </svg>
+
+        </button>
+
+    </footer>
+
+</div>
+
+<div id="infoOverlay" class="info-overlay">
+
+    <div class="info-modal">
+
+        <div class="info-header">
+
+            <h2>Sobre o Vega</h2>
+
+            <button id="infoClose" class="info-close" aria-label="Fechar">
+
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+        <div class="info-body">
+
+            <p><strong>Modelo:</strong> Nemotron 3 Ultra (550B parâmetros, 55B ativos), um modelo de código aberto da NVIDIA.</p>
+
+            <ul>
+
+                <li>Este é um modelo gratuito e de uso geral — respostas podem conter erros, imprecisões ou informações desatualizadas.</li>
+
+                <li>O conhecimento do modelo tem uma data de corte e ele não realiza buscas em tempo real na internet.</li>
+
+                <li>Não processa imagens, apenas texto e voz transcrita.</li>
+
+                <li>Por ser um modelo grande, as respostas podem demorar um pouco mais em horários de pico.</li>
+
+                <li>Evite compartilhar dados sensíveis ou pessoais durante a conversa.</li>
+
+                <li>Sempre verifique informações importantes (médicas, jurídicas, financeiras) com fontes confiáveis.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="{{ url_for('static', filename='js/api.js') }}"></script>
+<script src="{{ url_for('static', filename='js/sphere.js') }}"></script>
+<script src="{{ url_for('static', filename='js/speech.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>
