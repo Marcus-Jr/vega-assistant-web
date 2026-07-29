@@ -278,6 +278,12 @@ input::placeholder{
 
 }
 
+.send-icon {
+    width: 22px;
+    height: 22px;
+    transform: scaleX(-1);
+}
+
 .voice-button{
 
     background:#1c1c1c;
